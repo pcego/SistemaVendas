@@ -5,46 +5,49 @@
 package br.edu.fasa.vendas.domainModel;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author pcego
+ * @since 1.0
+ * @version 1.01
  */
 public class Venda {
-    
-    private int codigo;
-    private int cliente;
+
+    private int id;
+    private Cliente cliente;
     private Date data;
-    
-    public Venda(){
-        
+    private List<ItensVenda> itens;
+
+    public Venda() {
     }
 
     /**
      * @return the codigo
      */
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
      * @return the cliente
      */
-    public int getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
     /**
      * @param cliente the cliente to set
      */
-    public void setCliente(int cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
@@ -61,5 +64,29 @@ public class Venda {
     public void setData(Date data) {
         this.data = data;
     }
-        
+
+    /*
+     * @param ItensVenda adiciona ao vetor
+     */
+    public void addIten(ItensVenda iv) {
+        itens.add(iv);
+    }
+
+    /**
+     * @return the itens
+     */
+    public List<ItensVenda> getItens() {
+
+        return itens;
+
+    }
+
+    public void removeItens(ItensVenda iv) {
+        itens.remove(iv);
+
+    }
+
+    public ItensVenda getItenVenda(int a) {
+        return itens.get(a);
+    }
 }

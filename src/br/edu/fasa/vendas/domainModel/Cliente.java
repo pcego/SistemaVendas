@@ -7,20 +7,22 @@ package br.edu.fasa.vendas.domainModel;
 /**
  *
  * @author pcego
+ * @since 1.0
+ * @version 1.01
  */
 public class Cliente {
 
     public Cliente() {
     }
-    private int codigo;
+    private int id;
     private String nome;
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

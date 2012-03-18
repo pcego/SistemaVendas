@@ -7,12 +7,14 @@ package br.edu.fasa.vendas.domainModel;
 /**
  *
  * @author pcego
+ * @since 1.0
+ * @version 1.01
  */
 public class ItensVenda {
     
-    private int codigo;
+    private int id;
     private int venda;
-    private int produto;
+    private Produto produto;
     private int quantidade;
     private double valorUnitario;
     
@@ -23,15 +25,15 @@ public class ItensVenda {
     /**
      * @return the codigo
      */
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setCodigo(int id) {
+        this.id = id;
     }
 
     /**
@@ -51,14 +53,14 @@ public class ItensVenda {
     /**
      * @return the produto
      */
-    public int getProduto() {
+    public Produto getProduto() {
         return produto;
     }
 
     /**
      * @param produto the produto to set
      */
-    public void setProduto(int produto) {
+    public void setProduto(Produto produto) {
         this.produto = produto;
     }
 

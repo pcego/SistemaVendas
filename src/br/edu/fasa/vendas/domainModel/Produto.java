@@ -7,10 +7,12 @@ package br.edu.fasa.vendas.domainModel;
 /**
  *
  * @author pcego
+ * @since 1.0
+ * @version 1.01
  */
 public class Produto {
     
-    private int codigo;
+    private int id;
     private String nome;
     private double valor;
     private int estoque;
@@ -22,15 +24,15 @@ public class Produto {
     /**
      * @return the codigo
      */
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
     /**
      * @param codigo the codigo to set
      */
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
