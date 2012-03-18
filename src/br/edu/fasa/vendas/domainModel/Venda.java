@@ -12,9 +12,14 @@ import java.util.Date;
  */
 public class Venda {
     
-    private int codigo;
-    private int cliente;
+    //Algumas modificações que petronio me aconselhou a fazer para melhorar o Código.
+    private int id; //Usar ID ao invés de código, apesar de não mudar muito hehe
+    private Cliente cliente; //Criar um objeto cliente ao invéz de uma váriavel int para o codigo do mesmo.
     private Date data;
+    private List<ItemVenda> itens; //Usar uma lista aki para armazenar os itens das vendas.
+    //Fazer os metodos para controle da lista. ADD, Remove, retorna um item, retorna a lista toda.
+    
+    //Corrigir os Getters e Setters.
     
     public Venda(){
         
