@@ -13,7 +13,7 @@ package br.edu.fasa.vendas.domainModel;
 public class ItensVenda {
     
     private int id;
-    private int venda;
+    private Venda venda;
     private Produto produto;
     private int quantidade;
     private double valorUnitario;
@@ -39,14 +39,14 @@ public class ItensVenda {
     /**
      * @return the venda
      */
-    public int getVenda() {
+    public Venda getVenda() {
         return venda;
     }
 
     /**
      * @param venda the venda to set
      */
-    public void setVenda(int venda) {
+    public void setVenda(Venda venda) {
         this.venda = venda;
     }
 
