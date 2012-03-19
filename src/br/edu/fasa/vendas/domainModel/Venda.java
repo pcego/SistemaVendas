@@ -18,13 +18,13 @@ public class Venda {
     private int id;
     private Cliente cliente;
     private Date data;
-    private List<ItensVenda> itens;
+    private List<ItemVenda> itens;
 
     public Venda() {
     }
 
     /**
-     * @return the codigo
+     * @return the id
      */
     public int getId() {
         return id;
@@ -66,27 +66,27 @@ public class Venda {
     }
 
     /*
-     * @param ItensVenda adiciona ao vetor
+     * @param ItemVenda adiciona ao vetor
      */
-    public void addIten(ItensVenda iv) {
+    public void addIten(ItemVenda iv) {
         itens.add(iv);
     }
 
     /**
      * @return the itens
      */
-    public List<ItensVenda> getItens() {
+    public List<ItemVenda> getItens() {
 
         return itens;
 
     }
 
-    public void removeItens(ItensVenda iv) {
+    public void removeItens(ItemVenda iv) {
         itens.remove(iv);
 
     }
 
-    public ItensVenda getItenVenda(int a) {
+    public ItemVenda getItemVenda(int a) {
         return itens.get(a);
     }
 }

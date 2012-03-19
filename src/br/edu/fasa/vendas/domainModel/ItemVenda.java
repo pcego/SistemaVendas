@@ -10,7 +10,7 @@ package br.edu.fasa.vendas.domainModel;
  * @since 1.0
  * @version 1.01
  */
-public class ItensVenda {
+public class ItemVenda {
     
     private int id;
     private Venda venda;
@@ -18,7 +18,7 @@ public class ItensVenda {
     private int quantidade;
     private double valorUnitario;
     
-    public ItensVenda(){
+    public ItemVenda(){
         
     }
 
