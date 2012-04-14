@@ -4,17 +4,38 @@
  */
 package br.edu.fasa.vendas.domainModel;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author pcego
  * @since 1.0
  * @version 1.01
  */
-public class Produto {
+
+@Entity
+@Table(name="produtos")
+
+public class Produto implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="codigo")
     private int id;
+    
+    @Column(name="nome",length=255,nullable=false)
     private String nome;
+    
+    @Column(name="valor")
     private double valor;
+    
+    @Column(name="estoque",nullable=false)
     private int estoque;
     
     public Produto(){

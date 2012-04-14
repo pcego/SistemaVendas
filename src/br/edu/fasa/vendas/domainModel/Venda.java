@@ -6,6 +6,7 @@ package br.edu.fasa.vendas.domainModel;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -13,11 +14,24 @@ import java.util.List;
  * @since 1.0
  * @version 1.01
  */
+
+@Entity
+@Table(name="vendas")
 public class Venda {
 
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="codigo")
     private int id;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date datas;
+    
+    @ManyToOne(cascade= CascadeType.PERSIST)
+    @JoinColumn(name="cliente")
     private Cliente cliente;
-    private Date data;
+    
+    @OneToMany(cascade= CascadeType.ALL,mappedBy= "venda",targetEntity=ItemVenda.class)    
     private List<ItemVenda> itens;
 
     public Venda() {
@@ -52,17 +66,17 @@ public class Venda {
     }
 
     /**
-     * @return the data
+     * @return the datas
      */
-    public Date getData() {
-        return data;
+    public Date getDatas() {
+        return datas;
     }
 
     /**
-     * @param data the data to set
+     * @param datas the datas to set
      */
-    public void setData(Date data) {
-        this.data = data;
+    public void setDatas(Date datas) {
+        this.datas = datas;
     }
 
     /*

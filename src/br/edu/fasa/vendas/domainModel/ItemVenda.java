@@ -4,18 +4,38 @@
  */
 package br.edu.fasa.vendas.domainModel;
 
+import java.io.Serializable;
+import javax.persistence.*;
+
 /**
  *
  * @author pcego
  * @since 1.0
  * @version 1.01
  */
-public class ItemVenda {
+
+@Entity
+@Table(name="itensVendas") 
+public class ItemVenda implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="codigo")
     private int id;
+    
+    
+    @ManyToOne(cascade= CascadeType.ALL,targetEntity=Venda.class)
+    @JoinColumn(name="venda")
     private Venda venda;
+    
+    @ManyToOne(cascade= CascadeType.ALL,targetEntity=Produto.class)
+    @JoinColumn(name="produto")
     private Produto produto;
+    
+    @Column(name="quant")
     private int quantidade;
+    
+    @Column(name="valorUnit")
     private double valorUnitario;
     
     public ItemVenda(){
