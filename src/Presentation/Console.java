@@ -21,7 +21,7 @@ public class Console {
         EntityManagerFactory factory = 
                 Persistence.createEntityManagerFactory("vendasPU");
         EntityManager manager = factory.createEntityManager();
-        
+       
         Cliente c= new Cliente();
         c.setNome("Petronio3");
         
@@ -38,7 +38,7 @@ public class Console {
         catch(Exception e){
             tran.rollback();
         }
-        
+       
         System.out.println(c.getId());
         
         Cliente c2 = manager.find(Cliente.class, 2);

@@ -4,6 +4,7 @@
  */
 package br.edu.fasa.vendas.domainModel;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -17,7 +18,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="vendas")
-public class Venda {
+public class Venda implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -28,7 +29,7 @@ public class Venda {
     private Date datas;
     
     @ManyToOne(cascade= CascadeType.PERSIST)
-    @JoinColumn(name="cliente")
+    @JoinColumn(name="cliente",nullable=false)
     private Cliente cliente;
     
     @OneToMany(cascade= CascadeType.ALL,mappedBy= "venda",targetEntity=ItemVenda.class)    
