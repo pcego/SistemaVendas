@@ -5,6 +5,7 @@
 package br.edu.fasa.vendas.domainModel;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.*;
 
 /**
@@ -28,6 +29,9 @@ public class Cliente implements Serializable {
     
     @Column(name="nomeCliente",length=255)
     private String nome;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date dtAniversario;
 
     public int getId() {
         return id;
@@ -43,5 +47,19 @@ public class Cliente implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    /**
+     * @return the dtAniversario
+     */
+    public Date getDtAniversario() {
+        return dtAniversario;
+    }
+
+    /**
+     * @param dtAniversario the dtAniversario to set
+     */
+    public void setDtAniversario(Date dtAniversario) {
+        this.dtAniversario = dtAniversario;
     }
 }

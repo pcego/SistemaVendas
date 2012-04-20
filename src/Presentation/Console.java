@@ -6,6 +6,7 @@ package Presentation;
 
 import javax.persistence.*;
 import br.edu.fasa.vendas.domainModel.Cliente;
+import br.edu.fasa.vendas.domainModel.Venda;
 import java.util.List;
 
 /**
@@ -23,8 +24,8 @@ public class Console {
         EntityManager manager = factory.createEntityManager();
        
         Cliente c= new Cliente();
-        c.setNome("Petronio3");
-        
+        c.setNome("Gislene");
+                        
         EntityTransaction tran = manager.getTransaction();
         
         tran.begin();
